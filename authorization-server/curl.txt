@@ -1,0 +1,5 @@
+# 認可サーバーからアクセストークンを取得する
+curl -v -X POST -u "todo-client:todo-client" -d grant_type=password -d username=user -d password=user http://localhost:9999/auth/oauth/token
+
+# トークンキー（JWK）を取得する
+curl -v -X GET -u todo-client:todo-client http://localhost:9999/auth/oauth/token_key | jq
